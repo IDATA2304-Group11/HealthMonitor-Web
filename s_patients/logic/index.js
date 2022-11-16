@@ -4,9 +4,10 @@ window.onload = init;
 
 const REGEX_NAME = /^([^0-9]*)$/;
 const path = "server/patient/getpatientby";
-
+const IMGPATH = '../../img/';
 
 function init() {
+    document.getElementById('logoPic').src = IMGPATH + 'logo.png';
     document.getElementById('searchBtn').onclick = search;
 }
 
