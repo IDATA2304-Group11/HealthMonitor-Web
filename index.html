@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="s_index/style/index.css">
     <!--Icons for sidebar-->
     <script src="https://kit.fontawesome.com/0a8856d0a6.js" crossorigin="anonymous"></script>
-    <script src="logic/index.js"></script>
-    <script src="database/server.js"></script>
+    <script src="s_index/logic/index.js"></script>
 
     <title>Healthmonitor</title>
 </head>
@@ -23,7 +22,7 @@
         <header>Healthmonitor</header>
         <ul>
             <li><a href="index.html"><i class="fa-sharp fa-solid fa-house"></i>Dashboard</a></li>
-            <li><a href="page/patients.html"><i class="fa-sharp fa-solid fa-user"></i>Patients</a></li>
+            <li><a href="s_patients/patients.html"><i class="fa-sharp fa-solid fa-user"></i>Patients</a></li>
         </ul>
     </div>
 
@@ -42,9 +41,9 @@
     </div>
 
     <div class="critialPatientsDiv">
-        <b class="criticalPatients">
+        <strong class="criticalPatients">
             Critical Patients
-        </b>
+        </strong>
     </div>
 
     <div class="tablediv">
@@ -87,33 +86,5 @@
             </tbody>
         </table>
     </div>
-
-
-    <?php
-
-    $hostname = 'mysql579.loopia.se';
-    $username = 'windows@f328341';
-    $password = 'NtnuGruppe11';
-    $database = 'finsveen_dev';
-
-    $mysqli = mysqli_connect($hostname, $username, $password, $database);
-
-    if ($mysqli==false) die("Error connecting to database.");
-    
-
-    
-    $co = mysqli_real_connect($mysqli);
-    $query = mysqli_query($mysqli, "SELECT PID, Name FROM Patient");
-
-    while ($row = mysqli_fetch_array($query)) {
-    echo
-    "<tr>
-        <td>{$row['PID']}</td>
-        <td>{$row['Name']}</td>
-        
-    </tr>\n";
-    }
-
-
 </body>
 </html>

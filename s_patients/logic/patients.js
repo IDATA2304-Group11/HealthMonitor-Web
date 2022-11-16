@@ -10,7 +10,7 @@
     ------------------------------
 */
 /** Directory-path for images. */
-const IMGPATH = '../img/';
+const IMGPATH = '../../img/';
 /** Regex for numbers. */
 const REGEX_PATIENT_ID = /^\d+$/;
 /** Regex for strings. */
