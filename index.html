@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/index.css">
+    <!--Icons for sidebar-->
+    <script src="https://kit.fontawesome.com/0a8856d0a6.js" crossorigin="anonymous"></script>
+    <script src="logic/index.js"></script>
+    <script src="database/server.js"></script>
+
+    <title>Healthmonitor</title>
+</head>
+
+<!-- ROBOTO FONT-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<!--  -->
+
+<body>
+
+    <div class="sidebar">
+        <header>Healthmonitor</header>
+        <ul>
+            <li><a href="index.html"><i class="fa-sharp fa-solid fa-house"></i>Dashboard</a></li>
+            <li><a href="page/patients.html"><i class="fa-sharp fa-solid fa-user"></i>Patients</a></li>
+        </ul>
+    </div>
+
+
+    <div>
+        <div class="employeeDetailsDiv">
+            <i class="employeeDetails">
+                Username: (employeeDetails) <br>
+                ID: (employeeID)
+            </i>
+        </div>
+
+        <div class="logo">
+            <img id='logoPic'>
+        </div>
+    </div>
+
+    <div class="critialPatientsDiv">
+        <b class="criticalPatients">
+            Critical Patients
+        </b>
+    </div>
+
+    <div class="tablediv">
+        <table class="content-table" bgcolor="lightblue" height="auto">
+            <thead>
+            <tr>
+                <th width="120px">PatientID</th>
+                <th width="200px">Name</th>
+                <th width="50px">Age</th>
+                <th width="230px">Diagnosis</th>
+                <th width="100px">Status</th>
+                <th width="100px">Journal</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>233123</td>
+                <td>Ola Norman</td>
+                <td>82</td>
+                <td>E2</td>
+                <td><span style="color: red;"> <b>CRITICAL</b></span></td></td>
+                <td><a href><i>See journal</i></a></td>
+            </tr>
+            <tr>
+                <td>123332</td>
+                <td>Ola Skruemann</td>
+                <td>75</td>
+                <td>E11</td>
+                <td><span style="color: red;"> <b>CRITICAL</b></span></td></td>
+                <td><a href><i>See journal</i></a></td>
+            </tr>
+            <tr>
+                <td>956992</td>
+                <td>Ola Muttermann</td>
+                <td>72</td>
+                <td>E21</td>
+                <td><span style="color: red;"> <b>CRITICAL</b></span></td></td>
+                <td><a href><i>See journal</i></a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <?php
+
+    $hostname = 'mysql579.loopia.se';
+    $username = 'windows@f328341';
+    $password = 'NtnuGruppe11';
+    $database = 'finsveen_dev';
+
+    $mysqli = mysqli_connect($hostname, $username, $password, $database);
+
+    if ($mysqli==false) die("Error connecting to database.");
+    
+
+    
+    $co = mysqli_real_connect($mysqli);
+    $query = mysqli_query($mysqli, "SELECT PID, Name FROM Patient");
+
+    while ($row = mysqli_fetch_array($query)) {
+    echo
+    "<tr>
+        <td>{$row['PID']}</td>
+        <td>{$row['Name']}</td>
+        
+    </tr>\n";
+    }
+
+
+</body>
+</html>
