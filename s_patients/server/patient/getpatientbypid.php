@@ -11,14 +11,19 @@ $query = mysqli_query($mysqli, $sql)
 
 $row = mysqli_fetch_array($query);
 
+$sta = "<i class='journalBtn' onClick='openJournal(this.id)' id='";
+$end = "'>See Journal</i>";
+
 if ($row != false && $row != null) {
     do {
+        $btn = $sta . $row['PID'] . $end;
         echo
             "<tr>
                 <td>{$row['PID']}</td>
                 <td>{$row['name']}</td>
                 <td>{$row['age']}</td>
                 <td>{$row['gender']}</td>
+                <td>$btn</td>
             </tr>";
         } while ($row = mysqli_fetch_array($query));
     echo "</table>";

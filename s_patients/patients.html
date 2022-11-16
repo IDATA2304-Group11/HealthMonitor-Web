@@ -9,7 +9,7 @@
     <script src="logic/patients.js"></script>
     -->
     <script src="logic/index.js"></script>
-    <title>Healthmonitor</title>
+    <title>Patients</title>
 </head>
 
 <!-- ROBOTO FONT-->
@@ -57,7 +57,7 @@
                     <th width="200px">Full Name</th>
                     <th width="50px">Age</th>
                     <th width="50px">Sex</th>
-                    <th width="120px">Journal</th>
+                    <th width="120px">Journal</th> 
                     <!-- 
                         <th width="230px">Diagnosis</th>
                         <th width="100px">Status</th>
@@ -67,5 +67,11 @@
             </thead>
             <tbody id="output"></tbody>
     </div>
+    <script>
+        function openJournal(PID) {
+            localStorage.setItem('PID', PID);
+            window.location.replace("../../s_journal/journal.html");
+        }
+    </script>
 </body>
 </html>

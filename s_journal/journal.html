@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/index.css">
+    <!--Icons for sidebar-->
+    <script src="https://kit.fontawesome.com/0a8856d0a6.js" crossorigin="anonymous"></script>
+    <script src="logic/index.js"></script>
+    <title>Journal</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="graph/style/graph.css">
+</head>
+
+<!-- ROBOTO FONT-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<body>
+    <div class="sidebar">
+        <header>Healthmonitor</header>
+        <ul>
+            <li><a href="../index.html"><i class="fa-sharp fa-solid fa-house"></i>Dashboard</a></li>
+            <li><a href="../s_patients/patients.html"><i class="fa-sharp fa-solid fa-user"></i>Patients</a></li>
+        </ul>
+    </div>
+
+
+    <div>
+        <div class="employeeDetailsDiv">
+            <i class="employeeDetails">
+                Username: (employeeDetails) <br>
+                ID: (employeeID)
+            </i><br><br>
+            <strong id="test"></strong>
+        </div>
+
+        <div class="logo">
+            <img id='logoPic'>
+        </div>
+    </div>
+
+    <div class="critialPatientsDiv">
+        <strong id="test"></strong>
+    </div>
+
+    <div class="tablediv">
+        <div class="line-chart">
+            <div class="aspect-ratio">
+              <canvas id="mycanvas" height="560" width="900" ></canvas>
+            </div>
+          </div>
+          
+          <!-- javascript -->
+          <script type="text/javascript" src="graph/js/jquery.min.js"></script>
+          <script type="text/javascript" src="graph/js/Chart.min.js"></script>
+          <script type="text/javascript" src="graph/js/linegraph.js"></script> 
+    </div>
+</body>
+</html>

@@ -1,3 +1,9 @@
+/**
+ * JavaScript-file for patients.html.
+ * 
+ * @author jorgenfinsveen
+ * @version 26-10-22
+*/
 
 window.onload = init;
 
