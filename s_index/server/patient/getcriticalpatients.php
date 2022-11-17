@@ -2,9 +2,11 @@
 
 include "../db.php";
 
-$sql = "SELECT DISTINCT PID, name, DateOfBirth, Status FROM Patient WHERE PID LIKE '"; 
-$sql = $sql . $_GET['q'] . "%'";
-
+$sql = "SELECT DISTINCT PID, name, DateOfBirth, Status
+        FROM Patient 
+        WHERE Status = 'critical'
+        OR Status = 'unusual'
+        ORDER BY Status ASC, PID"; 
 
 $query = mysqli_query($mysqli, $sql)
             or die (mysqli_error($mysqli));

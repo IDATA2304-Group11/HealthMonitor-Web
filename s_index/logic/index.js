@@ -11,6 +11,7 @@
 */
 /** Directory-path for images. */
 const IMGPATH = 'img/';
+const SERVER_PATH = "s_index/server/patient/getcriticalpatients.php";
 
 
 /*
@@ -31,4 +32,16 @@ window.onload = init;
  */
 function init() {
     document.getElementById('logoPic').src = IMGPATH + 'logo.png';
+    fillTable();
+}
+
+function fillTable() {
+    let output    = document.getElementById('output');
+    const xhttp   = new XMLHttpRequest();
+
+    output.innerHTML = "";
+
+    xhttp.onload = function() { output.innerHTML = this.responseText; };
+    xhttp.open('GET', SERVER_PATH);
+    xhttp.send();
 }

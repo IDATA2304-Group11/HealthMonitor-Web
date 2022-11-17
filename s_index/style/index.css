@@ -136,3 +136,31 @@ ul li:hover a{
 .content-table tbody tr:last-of-type {
     border-bottom: 3px solid #4682b4;
 }
+
+.status-critical {
+    color: red;
+    text-decoration: italic;
+}
+
+.status-unusual {
+    color: orange;
+    text-decoration: italic;
+}
+
+.journalBtn {
+    color: rgb(118, 93, 255);
+}
+
+.journalBtn:hover {
+    color: rgb(75, 5, 161);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.journalBtn:active {
+    font-size: 13px; 
+}
+
+.journalBtn:visited {
+    color: rgb(195, 0, 255);
+}

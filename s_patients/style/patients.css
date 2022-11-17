@@ -159,3 +159,15 @@ ul li:hover a{
 .journalBtn:visited {
     color: rgb(195, 0, 255);
 }
+
+.status-critical {
+    color: red;
+}
+
+.status-unusual {
+    color: orange;
+}
+
+.status-stable {
+    color: green;
+}
