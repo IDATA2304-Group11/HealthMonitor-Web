@@ -6,49 +6,46 @@
     font-family: Roboto;
 }
 
+#window {
+    height: 100vw;
+}
+#section-left {
+    width: 250px;
+}
+#section-middle {
+    width: 900px;
+}
+#section-mid-top {
+    
+}
+#section-left-top {
+    height: 150px;
+}
+
+td {
+    border-style: 1px solid black;
+}
+
+
+
+
+
+
+#header {
+    display: inline-block;
+    margin-left: auto;
+  }
+
 .logo{
     display: inline-block;
     text-align: center;
-    margin-left: 220px;
     vertical-align: top;
 }
 
-.critialPatientsDiv{
-    margin-left: 350px;
-    margin-top: 70px;
-    height: 0;
-}
-
-.criticalPatients{
-    margin-top: 60px;
-    margin-bottom: -10px;
-    font-size: 20px;
-}
-
-
 .employeeDetailsDiv{
-    margin-left: 350px;
     font-size: 15px;
     display: inline-block;
     vertical-align: top;
-    margin-top: 30px;
-}
-
-.tabletitleleft{
-    font-weight: bold;
-    margin-left: 450px;
-    margin-bottom: 20px;
-    margin-top: 50px;
-    font-size: 30px;
-}
-
-.patienttableleft{
-    box-shadow: 0px 10px 30px 5px rgb(0,0,0,.15);
-    border-color: black;
-    border-radius: 5px;
-    display: inline-block;
-    margin-left: 300px;
-    margin-top: 500px;
 }
 
 .sidebar{
@@ -86,53 +83,11 @@
     color: red;
 }
 
+
 .sidebar ul a i{
     margin-right: 16px;    
 }
 
 ul li:hover a{
     padding-left: 50px;
-}
-
-/*Patient table */
-.tablediv {
-    margin-left: 10px;
-    font-weight: 400;
-}
-
-.content-table {
-    line-height: 70px;
-    margin-top: 90px;
-    border-collapse: collapse;
-    margin-left: 300px;
-    font-size: 0.9em;
-    min-width: 400px;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.content-table thead tr {
-    background-color: #4682b4;
-    color: #ffffff;
-    text-align: left;
-    font-weight: bold;
-}
-
-.content-table th,
-.content-table td {
-    padding: 12px 15px;
-    text-align: center;
-}
-
-.content-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.content-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.content-table tbody tr:last-of-type {
-    border-bottom: 3px solid #4682b4;
 }

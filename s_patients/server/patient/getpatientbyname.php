@@ -2,7 +2,7 @@
 
 include "../db.php";
 
-$sql = "SELECT DISTINCT PID, name, age, gender FROM Patient WHERE name LIKE '%"; 
+$sql = "SELECT DISTINCT PID, name, DateOfBirth, gender FROM Patient WHERE name LIKE '%"; 
 $sql = $sql . $_GET['q'] . "%'";
 
 $query = mysqli_query($mysqli, $sql)
@@ -20,7 +20,7 @@ if ($row != false && $row != null) {
             "<tr>
                 <td>{$row['PID']}</td>
                 <td>{$row['name']}</td>
-                <td>{$row['age']}</td>
+                <td>{$row['DateOfBirth']}</td>
                 <td>{$row['gender']}</td>
                 <td>$btn</td>
             </tr>";

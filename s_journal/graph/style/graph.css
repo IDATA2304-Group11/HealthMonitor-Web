@@ -8,7 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: #ededed;
+  background: #ffffff;
 }
 
 *:before,
@@ -45,13 +45,17 @@ html {
 }
 
 .chart-container {
-  height: 1200px;
-  width: auto;
+
+  border: 1px solid; 
+  border-color: black;
+  margin-left: 10px;
 }
 
 #mycanvas {
-  height: 960px;
-  width: 600px;
-  background: #2c2c2f;
+
+  background: #ffffff;
   color: white;
+  border: 1px solid; 
+  border-color: black;
 }
+
