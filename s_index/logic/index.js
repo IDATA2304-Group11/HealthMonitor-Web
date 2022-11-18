@@ -1,52 +1,63 @@
 /**
- * JavaScript-file for index.html.
+ * Logic for mainpage.
  * 
  * @author jorgenfinsveen
- * @version 26-10-22
+ * @since 26-10-22
+ * @version 18-11-22
 */
-
-/*
-    DECLARATIONS
-    ------------------------------
-*/
-/** Directory-path for images. */
-const IMGPATH = '../img/';
-const SERVER_PATH = "server/patient/getcriticalpatients.php";
-
-
-/*
-    EVENTS
-    ------------------------------
-*/
-// Initialize window upon loading. 
 window.onload = init;
 
 
-/*
-    FUNCTIONS
-    ------------------------------
-*/
+
+/** Directory-path for images. */
+const IMG_PATH = '../img/';
+/** Path to php-server. */
+const PHP_PATH = "server/patient/getcriticalpatients.php";
+/** HTML-tag <br> for linebreak. */
+const BR = document.createElement('br');
+
+
+
 /**
- * Initializes the logic-aspects of this web page.
- * Assigns image-source for the logo.
+ * Initializer for the HTML-page. Gets called when
+ * window loading the page.
  */
 function init() {
-    document.getElementById('logoPic').src = IMGPATH + 'logo.png';
-    let details = document.getElementById('details');
-    let br = document.createElement('br');
+    
+    /** HTML-element displaying user-info. */ 
+    const details = document.getElementById('details');
+
+    /* Updates details with user-info. */
     details.innerHTML = "User: Dr. " + eval(localStorage.getItem('DRN'));
-    details.appendChild(br);
+    details.appendChild(BR);
     details.innerHTML += "Doctor ID: " + localStorage.getItem('UID');
+    
+    /* Adding logo. */
+    document.getElementById('logoPic').src = IMG_PATH + 'logo.png';
+
+    /* Fill table with patient details. */
     fillTable();
 }
 
-function fillTable() {
-    let output    = document.getElementById('output');
-    const xhttp   = new XMLHttpRequest();
 
+
+
+/**
+ * Fill table with patients which have a status assigned
+ * which is not "stable".<br>
+ * 
+ * Requests all non-stable patients from the server through a
+ * XMLHttpRequest.
+ */
+function fillTable() {
+
+    /** Output element from the page. */
+    const output  = document.getElementById('output');
     output.innerHTML = "";
 
+    /* Creates an XML-HTTP request for calling the php-servers. */
+    const xhttp   = new XMLHttpRequest();
     xhttp.onload = function() { output.innerHTML = this.responseText; };
-    xhttp.open('GET', SERVER_PATH);
+    xhttp.open('GET', PHP_PATH);
     xhttp.send();
 }

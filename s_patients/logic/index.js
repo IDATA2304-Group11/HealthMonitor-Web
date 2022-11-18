@@ -1,5 +1,5 @@
 /**
- * JavaScript-file for patients.html.
+ * JavaScript for patients.html.
  * 
  * @author jorgenfinsveen
  * @since 26-10-22
@@ -7,12 +7,18 @@
 */
 window.onload = init;
 
+
+
 /** Pattern not allowing numbers. */
 const REGEX_NAME = /^([^0-9]*)$/;
 /** Path to PHP-server. */
-const path = "server/patient/getpatientby";
+const PHP_PATH = "server/patient/getpatientby";
 /** Path to logo-image. */
-const IMGPATH = '../../img/';
+const IMG_PATH = '../../img/';
+/** HTML-tag <br> for linebreak. */
+const BR = document.createElement('br');
+
+
 
 
 /**
@@ -20,13 +26,23 @@ const IMGPATH = '../../img/';
  * window loading the page.
  */
 function init() {
-    document.getElementById('logoPic').src = IMGPATH + 'logo.png';
+
+    /** HTML-element displaying user-info. */ 
     const details = document.getElementById('details');
-    const br = document.createElement('br');
+    
+    /* Updates details with user-info. */
     details.innerHTML = "User: Dr. " + eval(localStorage.getItem('DRN'));
-    details.appendChild(br);
+    details.appendChild(BR);
     details.innerHTML += "Doctor ID: " + localStorage.getItem('UID');
+
+    /* Sets logo. */
+    document.getElementById('logoPic').src = IMG_PATH + 'logo.png';
+
+    /* Adding event-listener for the button. */
     document.getElementById('searchBtn').onclick = search;
+    document.getElementById('searchBtn').click();
+
+    /* Prevents page reloading on pressing enter. */
     document.getElementById('searchWord').onkeydown = function(ev) {
         if (ev.key === "Enter") {
             ev.preventDefault();
@@ -38,16 +54,30 @@ function init() {
 
 
 
+/**
+ * Searching the database for the specified searchword from
+ * HTML-input.<br>
+ *
+ * Parses searchword as parameter to the php-server running queries
+ * on the database.
+ */
 function search() {
-    let input     = document.getElementById('searchWord').value.trim().toLowerCase();
-    let output    = document.getElementById('output');
-    const xhttp   = new XMLHttpRequest();
-    const request = path + ( (REGEX_NAME.test(input)) ? "name.php?q=" : "pid.php?q=" ) + input;
 
+    /* Fetching HTML elements. */
+    const input     = document.getElementById('searchWord').value.trim().toLowerCase();
+    const output    = document.getElementById('output');
+
+    /* Clears previous output. */
     output.innerHTML = "";
-    if (input.length === 0) return;
 
+    /* Creates an XML-HTTP request for calling the php-servers. */
+    const xhttp   = new XMLHttpRequest();
+    const request = PHP_PATH + ( (REGEX_NAME.test(input)) ? "name.php?q=" : "pid.php?q=" ) + input;
+
+    /* Setting server response to the output element. */
     xhttp.onload = function() { output.innerHTML = this.responseText; };
+
+    /* Executing the request. */
     xhttp.open('GET', request);
     xhttp.send();
 }
