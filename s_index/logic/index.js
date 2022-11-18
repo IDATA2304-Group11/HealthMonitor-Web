@@ -10,8 +10,8 @@
     ------------------------------
 */
 /** Directory-path for images. */
-const IMGPATH = 'img/';
-const SERVER_PATH = "s_index/server/patient/getcriticalpatients.php";
+const IMGPATH = '../img/';
+const SERVER_PATH = "server/patient/getcriticalpatients.php";
 
 
 /*
@@ -32,6 +32,11 @@ window.onload = init;
  */
 function init() {
     document.getElementById('logoPic').src = IMGPATH + 'logo.png';
+    let details = document.getElementById('details');
+    let br = document.createElement('br');
+    details.innerHTML = "User: Dr. " + eval(localStorage.getItem('DRN'));
+    details.appendChild(br);
+    details.innerHTML += "Doctor ID: " + localStorage.getItem('UID');
     fillTable();
 }
 

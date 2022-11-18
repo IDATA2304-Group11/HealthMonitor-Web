@@ -1,6 +1,5 @@
 # Web Application
 
-
 ### Login Credentials
 
 * Dr. Examinator
@@ -21,3 +20,12 @@
 * Dr. John Doe
   * id: 905
   * password: Guest100
+* Dr. Even Haslerud
+  * id: 906
+  * password: haslerud12
+* Dr. Sivert Ertshus
+  * id: 907
+  * password: ersthus12
+* Dr. Jon Ulfeng
+  * id: 908
+  * password: ulfeng100

@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style/patients.css">
+    <link rel="stylesheet" href="style/index.css">
     <!--Icons for sidebar-->
     <script src="https://kit.fontawesome.com/0a8856d0a6.js" crossorigin="anonymous"></script>
-    <!-- 
-    <script src="logic/patients.js"></script>
-    -->
     <script src="logic/index.js"></script>
-    <title>Patients</title>
+
+    <title>Healthmonitor</title>
 </head>
 
 <!-- ROBOTO FONT-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<!--  -->
 
 <body>
 
@@ -23,7 +22,7 @@
         <header>Healthmonitor</header>
         <ul>
             <li><a href="../s_index/index.html"><i class="fa-sharp fa-solid fa-house"></i>Dashboard</a></li>
-            <li><a href="#"><i class="fa-sharp fa-solid fa-user"></i>Patients</a></li>
+            <li><a href="../s_patients/patients.html"><i class="fa-sharp fa-solid fa-user"></i>Patients</a></li>
         </ul>
     </div>
 
@@ -37,18 +36,16 @@
         </div>
 
         <div class="logo">
-            <img id='logoPic' class="center">
+            <img id='logoPic'>
         </div>
     </div>
 
-    <div class="patientSearch">   
-        <form action="">
-            <input id='searchWord' class="searchBar" type="text" placeholder="Patient Search">
-            <button id='searchBtn' class="submitButton" type="button">Search</button>
-        </form>
+    <div class="critialPatientsDiv">
+        <strong class="criticalPatients">
+            Pending Patients
+        </strong>
     </div>
-    
-    <!--PATIENT TABLE-->
+
     <div class="tablediv">
         <table class="content-table" bgcolor="lightblue" height="auto">
             <thead>
@@ -58,14 +55,14 @@
                     <th width="100px">Date of Birth</th>
                     <th width="50px">Status</th>
                     <th width="120px">Journal</th> 
-                </tr> <!-- Remove closing tr-tag? -->
+                </tr>
             </thead>
             <tbody id="output"></tbody>
     </div>
     <script>
         function openJournal(PID) {
             localStorage.setItem('PID', PID);
-            window.location.replace("../../s_journal/journal.html");
+            window.location.replace("../s_journal/journal.html");
         }
     </script>
 </body>
