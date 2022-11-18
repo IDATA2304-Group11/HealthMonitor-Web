@@ -1,6 +1,6 @@
 <?php
 
-include "../db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/php/db.php";
 
 $sql = "SELECT DISTINCT PID, name, DateOfBirth, Status FROM Patient WHERE name LIKE '%"; 
 $sql = $sql . $_GET['q'] . "%'";
@@ -31,3 +31,4 @@ if ($row != false && $row != null) {
 } else {
     echo "<p style='text-align:center'>No records found.</p>";
 }
+$mysqli->close();

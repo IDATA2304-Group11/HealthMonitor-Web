@@ -2,7 +2,7 @@
 //setting header to json
 header('Content-Type: application/json');
 
-include "db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/php/db.php";
 
 // Query TIME
 $req = "SELECT Time, Sys, Dia, HR 

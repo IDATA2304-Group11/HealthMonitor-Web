@@ -9,12 +9,10 @@ window.onload = init;
 
 
 
-/** Path to logo-image. */
-const IMG_PATH = '../../img/';
-/** HTML-tag <br> for linebreak. */
-const BR = document.createElement('br');
 
 
+
+import {setDescription, IMG_PATH} from '/global/logic.js';
 
 
 /**
@@ -27,14 +25,9 @@ function init() {
     let pid = localStorage.getItem('PID');
     document.getElementById('test').innerHTML = "PID: " + pid;
     
-    /** HTML-element displaying user-info. */ 
-    let details = document.getElementById('details');
-
-    /* Updates details with user-info. */
-    details.innerHTML = "User: Dr. " + eval(localStorage.getItem('DRN'));
-    details.appendChild(BR);
-    details.innerHTML += "Doctor ID: " + localStorage.getItem('UID');
-
-    /* Adding logo. */
-    document.getElementById('logoPic').src = IMG_PATH + 'logo.png';
+     /* Updates details with user-info. */
+     setDescription();
+    
+     /* Adding logo. */
+     document.getElementById('logoPic').src = IMG_PATH;
 }

@@ -15,6 +15,8 @@ const REGEX_UID = /^\d+$/;
 const REGEX_PSW = /^[a-z0-9]+$/i;
 
 
+let DRN;
+let UID
 
 
 /**
@@ -22,13 +24,11 @@ const REGEX_PSW = /^[a-z0-9]+$/i;
  * window loading the page.
  */
 function init() {
-
     /* Adding EventListeners. */
     document.getElementById('login').onclick = login;
-    document.getElementById('id').onkeydown = eventHandler(ev); 
-    document.getElementById('pswrd').onkeydown = eventHandler(ev); 
+    document.getElementById('id').onkeydown = function(ev) {eventHandler(ev);}
+    document.getElementById('pswrd').onkeydown = function(ev) {eventHandler(ev);}
 }
-
 
 
 
@@ -63,7 +63,8 @@ function login() {
     const password = document.getElementById('pswrd').value;
 
     /* Stores the username in localStorage. */
-    localStorage.setItem('UID', username);
+    sessionStorage.setItem('UID', username);
+    
 
     /* 
      * Validates the login credentials before calling
@@ -87,6 +88,7 @@ function login() {
     xhttp.onload = function() { 
         let response = this.responseText;
         if (response != "null" && response != null) {
+            DRN = response;
             accessPage(response)
             clear();
         } else {
@@ -108,7 +110,7 @@ function login() {
  * @param {string} name Name of the user.
  */ 
 function accessPage(name) {
-    localStorage.setItem('DRN', name);
+    sessionStorage.setItem('DRN', name);
     window.location.replace("../../s_index/index.html");
 }
 

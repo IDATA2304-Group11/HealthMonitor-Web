@@ -9,14 +9,13 @@ window.onload = init;
 
 
 
-/** Directory-path for images. */
-const IMG_PATH = '../img/';
+
 /** Path to php-server. */
 const PHP_PATH = "server/patient/getcriticalpatients.php";
 /** HTML-tag <br> for linebreak. */
 const BR = document.createElement('br');
 
-
+import {setDescription, IMG_PATH} from '/global/logic.js';
 
 /**
  * Initializer for the HTML-page. Gets called when
@@ -24,16 +23,11 @@ const BR = document.createElement('br');
  */
 function init() {
     
-    /** HTML-element displaying user-info. */ 
-    const details = document.getElementById('details');
-
     /* Updates details with user-info. */
-    details.innerHTML = "User: Dr. " + eval(localStorage.getItem('DRN'));
-    details.appendChild(BR);
-    details.innerHTML += "Doctor ID: " + localStorage.getItem('UID');
+    setDescription();
     
     /* Adding logo. */
-    document.getElementById('logoPic').src = IMG_PATH + 'logo.png';
+    document.getElementById('logoPic').src = IMG_PATH;
 
     /* Fill table with patient details. */
     fillTable();

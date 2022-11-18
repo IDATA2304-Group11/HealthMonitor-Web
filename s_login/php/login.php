@@ -1,6 +1,6 @@
 <?php
 
-include "../../php/db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/php/db.php";
 
 $cred = explode(";", $_GET['q']);
 $sql = "SELECT name FROM Users WHERE UID = " . "'" . $cred[0] . "'" .

@@ -13,12 +13,8 @@ window.onload = init;
 const REGEX_NAME = /^([^0-9]*)$/;
 /** Path to PHP-server. */
 const PHP_PATH = "server/patient/getpatientby";
-/** Path to logo-image. */
-const IMG_PATH = '../../img/';
-/** HTML-tag <br> for linebreak. */
-const BR = document.createElement('br');
 
-
+import {setDescription, IMG_PATH} from '/global/logic.js';
 
 
 /**
@@ -27,16 +23,11 @@ const BR = document.createElement('br');
  */
 function init() {
 
-    /** HTML-element displaying user-info. */ 
-    const details = document.getElementById('details');
-    
     /* Updates details with user-info. */
-    details.innerHTML = "User: Dr. " + eval(localStorage.getItem('DRN'));
-    details.appendChild(BR);
-    details.innerHTML += "Doctor ID: " + localStorage.getItem('UID');
+    setDescription();
 
-    /* Sets logo. */
-    document.getElementById('logoPic').src = IMG_PATH + 'logo.png';
+    /* Adding logo. */
+    document.getElementById('logoPic').src = IMG_PATH;
 
     /* Adding event-listener for the button. */
     document.getElementById('searchBtn').onclick = search;
