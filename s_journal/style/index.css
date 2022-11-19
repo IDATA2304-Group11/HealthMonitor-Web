@@ -15,9 +15,6 @@
 #section-middle {
     width: 900px;
 }
-#section-mid-top {
-    
-}
 #section-left-top {
     height: 150px;
 }
@@ -39,13 +36,17 @@ td {
 .logo{
     display: inline-block;
     text-align: center;
+    margin-left: 220px;
     vertical-align: top;
+    margin-top: -90px;
 }
 
 .employeeDetailsDiv{
+    margin-left: 110px;
     font-size: 15px;
     display: inline-block;
     vertical-align: top;
+    margin-top: -60px;
 }
 
 .sidebar{
@@ -90,4 +91,33 @@ td {
 
 ul li:hover a{
     padding-left: 50px;
+}
+
+#mycanvas {
+    border-radius: 10px;
+    
+}
+
+.critialPatientsDiv, #personalia, .icd-div {
+    display: inline-block;
+}
+
+.icd-div {
+    margin-left: 150px;
+}
+
+.dh {
+    width: 100px;
+    border: 1px solid;
+    border-color: black;
+}
+
+.dd {
+    width: 250px;
+    border: 1px solid;
+    border-color: black;
+}
+
+.diagnosticTable {
+    margin-top: 0px;
 }

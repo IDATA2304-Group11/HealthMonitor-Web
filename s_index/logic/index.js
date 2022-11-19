@@ -7,9 +7,6 @@
 */
 window.onload = init;
 
-
-
-
 /** Path to php-server. */
 const PHP_PATH = "server/patient/getcriticalpatients.php";
 /** HTML-tag <br> for linebreak. */

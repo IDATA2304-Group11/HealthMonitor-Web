@@ -32,6 +32,7 @@ function init() {
     /* Adding event-listener for the button. */
     document.getElementById('searchBtn').onclick = search;
     document.getElementById('searchBtn').click();
+    document.getElementById('searchWord').addEventListener('input', function(e) {search();});
 
     /* Prevents page reloading on pressing enter. */
     document.getElementById('searchWord').onkeydown = function(ev) {

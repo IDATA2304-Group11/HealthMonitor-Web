@@ -23,6 +23,7 @@
         <ul>
             <li><a href="../s_index/index.html"><i class="fa-sharp fa-solid fa-house"></i>Dashboard</a></li>
             <li><a href="../s_patients/patients.html"><i class="fa-sharp fa-solid fa-user"></i>Patients</a></li>
+            <li><a href="/index.html"><i class="fa-solid fa-right-to-bracket"></i>Log Out</a></li>
         </ul>
     </div>
 
@@ -32,23 +33,17 @@
             <i class="employeeDetails" id="details">
                 Username: (employeeDetails) <br>
                 ID: (employeeID)
-            </i><br><br>
-            <strong id="test"></strong>
+            </i>
         </div>
-
         <div class="logo">
             <img id='logoPic'>
         </div>
     </div>
 
-    <div class="critialPatientsDiv">
-        <strong id="test"></strong>
-    </div>
-
     <div class="tablediv">
         <div class="line-chart">
             <div class="aspect-ratio">
-              <canvas id="mycanvas" height="560" width="900" ></canvas>
+              <canvas id="mycanvas" height="460" width="800" ></canvas>
             </div>
           </div>
           
@@ -56,6 +51,31 @@
           <script type="text/javascript" src="graph/js/jquery.min.js"></script>
           <script type="text/javascript" src="graph/js/Chart.min.js"></script>
           <script type="text/javascript" src="graph/js/linegraph.js"></script> 
+          
+    </div>
+    <div class="critialPatientsDiv">
+        <div id="personalia">
+            PID: ----<br>
+            Name: -----<br>
+            Date of Birth: ----<br>
+            Sex: -----<br>
+            <br>
+            Status: -----
+        </div>
+        <div class="icd-div">
+            <table class="diagnosticTable">
+                <thead>
+                    <th class="dh">ICD-10</th>
+                    <th class="dd">Description</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="dh">XX-XX</td>
+                        <td class="dd">------</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
     </div>
 </body>
 </html>

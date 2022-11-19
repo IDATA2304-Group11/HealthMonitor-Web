@@ -23,7 +23,7 @@ function init() {
 
     /** Patient-id for patient chosen. */
     let pid = localStorage.getItem('PID');
-    document.getElementById('test').innerHTML = "PID: " + pid;
+    //document.getElementById('personalia').innerHTML = "PID: " + pid;
     
      /* Updates details with user-info. */
      setDescription();

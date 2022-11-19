@@ -14,10 +14,21 @@ function setDescription() {
     /** HTML-element displaying user-info. */ 
     const details = document.getElementById('details');
 
-    /* Updates details with user-info. */
-    details.innerHTML = "User: Dr. " + eval(sessionStorage.getItem('DRN'));
-    details.appendChild(BR);
-    details.innerHTML += "Doctor ID: " + sessionStorage.getItem('UID');
+    if (details == null) return;
+    try {
+        let DRN = sessionStorage.getItem('DRN');
+        let UID = sessionStorage.getItem('UID');
+
+        if (DRN == null || UID == null) return;
+        
+        /* Updates details with user-info. */
+        details.innerHTML = "User: Dr. " + eval(DRN);
+        details.appendChild(BR);
+        details.innerHTML += "Doctor ID: " + sessionStorage.getItem('UID');
+    } catch (e) {
+        window.location.replace("../index.html");
+        return;
+    }
 }
 
 export {setDescription, DB_PATH, IMG_PATH};
