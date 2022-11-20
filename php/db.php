@@ -5,8 +5,8 @@
  * requested database. Other server-files will make use
  * of the variable $mysqli to run queries.
  *
- * @author jorgenfinsveen
- * @since 14-11-2022
+ * @author  jorgenfinsveen
+ * @since   14-11-2022
  * @version 15-11-2022
 */
 

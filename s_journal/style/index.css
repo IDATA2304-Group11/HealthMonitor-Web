@@ -36,13 +36,12 @@ td {
 .logo{
     display: inline-block;
     text-align: center;
-    margin-left: 220px;
+    margin-left: 290px;
     vertical-align: top;
     margin-top: -90px;
 }
 
 .employeeDetailsDiv{
-    margin-left: 110px;
     font-size: 15px;
     display: inline-block;
     vertical-align: top;
@@ -95,15 +94,17 @@ ul li:hover a{
 
 #mycanvas {
     border-radius: 10px;
-    
+    margin-bottom: 30px;
 }
 
 .critialPatientsDiv, #personalia, .icd-div {
     display: inline-block;
+    padding-top: 10px;
 }
 
 .icd-div {
     margin-left: 150px;
+    
 }
 
 .dh {
@@ -120,4 +121,27 @@ ul li:hover a{
 
 .diagnosticTable {
     margin-top: 0px;
+    text-align: center;
+}
+
+.status-critical {
+    color: red;
+}
+
+.status-unusual {
+    color: orange;
+}
+
+.status-stable {
+    color: green;
+}
+
+#header {
+    padding-top: 100px;
+    margin-left: 150px;
+}
+
+.critialPatientsDiv {
+    margin-top: -100px;
+    margin-bottom: 100px;
 }

@@ -19,7 +19,7 @@
 
 <body>
     <div class="sidebar">
-        <header>Healthmonitor</header>
+        <header>HealthMonitor</header>
         <ul>
             <li><a href="../s_index/index.html"><i class="fa-sharp fa-solid fa-house"></i>Dashboard</a></li>
             <li><a href="../s_patients/patients.html"><i class="fa-sharp fa-solid fa-user"></i>Patients</a></li>
@@ -28,7 +28,7 @@
     </div>
 
 
-    <div>
+    <div id="header">
         <div class="employeeDetailsDiv">
             <i class="employeeDetails" id="details">
                 Username: (employeeDetails) <br>
@@ -60,7 +60,8 @@
             Date of Birth: ----<br>
             Sex: -----<br>
             <br>
-            Status: -----
+            Status: -----<br>
+            Sensor: -----
         </div>
         <div class="icd-div">
             <table class="diagnosticTable">
@@ -68,11 +69,7 @@
                     <th class="dh">ICD-10</th>
                     <th class="dd">Description</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td class="dh">XX-XX</td>
-                        <td class="dd">------</td>
-                    </tr>
+                <tbody id="icd-output">
                 </tbody>
             </table>
         </div>    
