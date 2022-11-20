@@ -1,9 +1,7 @@
 $(document).ready(function(){
     let pid = localStorage.getItem('PID');
-    console.log("ajax pid: " + pid);
-    console.log("../../s_journal/graph/chartjs/followersdata.php?q="+pid.trim());
     $.ajax({
-      url : "../../s_journal/graph/chartjs/followersdata.php?q="+pid.trim(),
+      url : "../../s_journal/graph/server/getmeasurements.php?q="+pid.trim(),
       type : "GET",
       success : function(data){
   

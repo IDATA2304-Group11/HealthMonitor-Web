@@ -8,8 +8,9 @@
 window.onload = init;
 
 
-
+/** Personalia-div from document. */
 const personalia = document.getElementById('personalia');
+/** ICD-10-table from document. */
 const diagnostic = document.getElementById('icd-output');
 
 
@@ -25,7 +26,6 @@ function init() {
     /** Patient-id for patient chosen. */
     let pid = localStorage.getItem('PID');
     
-    
     /* Updates details with user-info. */
     setDescription();
 
@@ -37,6 +37,10 @@ function init() {
 }
 
 
+
+/**
+ * Inserts patient personalia fetched from the database.
+ */
 function getPersonalia() {
     const xhttp   = new XMLHttpRequest();
     const request = "server/getpersonalia.php?q=" + localStorage.getItem('PID');
@@ -51,8 +55,10 @@ function getPersonalia() {
 
 
 
-
-
+/**
+ * Populates the ICD-10-table with the diagnoses which
+ * the patient is diagnosed with.
+ */
 function getDiagnostics() {
 
     const xhttp   = new XMLHttpRequest();

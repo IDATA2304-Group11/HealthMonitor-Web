@@ -97,7 +97,7 @@ function login() {
     };
 
     /* Executing the request. */
-    xhttp.open('GET', "s_login/php/login.php?q=" + username + ";" + password);
+    xhttp.open('GET', "s_login/server/login.php?q=" + username + ";" + password);
     xhttp.send();
 }
 

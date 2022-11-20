@@ -8,10 +8,9 @@
 window.onload = init;
 
 /** Path to php-server. */
-const PHP_PATH = "server/patient/getcriticalpatients.php";
-/** HTML-tag <br> for linebreak. */
-const BR = document.createElement('br');
+const PHP_PATH = "server/getcriticalpatients.php";
 
+/* Importing global code. */
 import {setDescription, IMG_PATH} from '/global/logic.js';
 
 /**

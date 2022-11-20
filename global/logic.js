@@ -1,8 +1,6 @@
 
 /** Directory-path for images. */
 const IMG_PATH = '/img/logo.png';
-/** Path to php-server. */
-const DB_PATH = "/php/db.php";
 /** HTML-tag <br> for linebreak. */
 const BR = document.createElement('br');
 
@@ -31,4 +29,4 @@ function setDescription() {
     }
 }
 
-export {setDescription, DB_PATH, IMG_PATH};
+export {setDescription, IMG_PATH};
