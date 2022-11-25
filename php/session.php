@@ -12,6 +12,6 @@
 */
                                     /** Hosting-server */
 $hostname = 'mysql579.loopia.se';   /** Username */
-$username = 'windows@f328341';      /** Password */
-$password = 'NtnuGruppe11';         /** Database */
+$username = 'web@f328341';          /** Password */
+$password = 'NtnuWebGroup11!#?';    /** Database */
 $database = 'finsveen_dev';
