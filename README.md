@@ -5,27 +5,21 @@
 * Dr. Examinator
   * id: 900
   * password: ExaminatorNTNU
-* Dr. Jørgen Finsveen
-  * id: 901
-  * password: Finsveen11
-* Dr. Petter Edvardsen
-  * id: 902
-  * password: Edvarsen11
-* Dr. Mikkel Stavelie
-  * id: 903
-  * password: Stavelie11
-* Dr. Ole Dvergsdal
-  * id: 904
-  * password: Dvergsdal11
-* Dr. John Doe
-  * id: 905
-  * password: Guest100
-* Dr. Even Haslerud
-  * id: 906
-  * password: haslerud12
-* Dr. Sivert Ertshus
-  * id: 907
-  * password: ersthus12
-* Dr. Jon Ulfeng
-  * id: 908
-  * password: ulfeng100
+
+### Directories
+
+* s_login
+  * Contains all files associated with the login-page of the web-application except index.html.
+* s_index
+  * Contains all files associated with the dashboard-page.
+* s_patients
+  * Contains all files associated with the patients-page.
+* s_journal
+  * Contains all files associated with the journal-page.
+  * Also contains the code which generates the ChartJs graphs.
+* php
+  * Contains files responsible for the connection to the database-server and the distribution of those sessions.
+* img
+  * Contains the logo which are being used in the website.
+* global
+  * Contains js-code which is being utilized by several parts of this application, making it uneccesary to rewrite code.
